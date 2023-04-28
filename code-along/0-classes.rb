@@ -5,4 +5,13 @@
 
 # String Class
 
+class Dog
+    def speak
+        puts "woof"
+    end 
+end 
+my_dog = Dog.new
+my_dog ["name"] = "Jenkins"
+puts "my name is #{my_dog["name"]}"
+my_dog.speak
 # String Methods
