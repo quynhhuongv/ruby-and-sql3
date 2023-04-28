@@ -22,16 +22,25 @@ new_company ["url"] = "apple.com"
 new_company.save
 puts "Apple created!"
 
-new_company_2 = company.new
+new_company_2 = Company.new
 new_company_2["name"] = "Amazon"
 new_company_2["city"] = "Seattle"
 new_company_2["state"]="WA"
-new_company.save
+new_company_2.save
 puts "Amazon created!"
 puts "There are #{Company.all.count} companies in the companies table."
+puts Company.all.inspect 
 # 2. insert new rows in companies table
 
 # 3. query companies table to find all row with California company
+# ca_companies = Conpany.where({"state"=>"CA"})
+# puts ca_companies.inspect 
+
+#Functional equivalent of SELECT * FROM companies WHERE name = "Apple" LIMIT 1;
+apple = Company.find_by({"Name"=>"Apple", "state"=>"CA"})
+apple ["name"] = "Apple Computer, Inc"
+apple.save
+puts apple.inspect 
 
 # 4. query companies table to find single row for Apple
 
