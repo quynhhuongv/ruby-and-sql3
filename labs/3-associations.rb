@@ -32,6 +32,16 @@ new_activity.save
 # - quick checkin over facetime
 # - met at Cupertino
 
+activities = Activity.where({
+    "salesperson_id" => ben["id"],
+    "contact_id"=> tim["id"]
+})
+
+puts "Activities between Ben and Tim"
+for activity in activities
+    puts "-#{activity ["note"]}"
+end
+
 # CHALLENGE:
 # 3. Similar to above, but display all of the activities for the salesperson
 # across all contacts (sample output below):
